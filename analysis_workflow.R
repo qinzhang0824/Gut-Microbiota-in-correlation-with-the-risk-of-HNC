@@ -183,4 +183,46 @@ ggplot2::ggplot(data = d, ggplot2::aes(x = beta.exposure,
                                                                                                                                                  d$outcome[1])) + ggplot2::theme(legend.position = "top",
                                                                                                                                                                                  legend.direction = "vertical") + ggplot2::guides(colour = ggplot2::guide_legend(ncol = 2))
 
+##########################################################################################
+library(forestplot)
+out_multi <-read.table("table_to_figure_input_0908.xls",sep='\t',header=T)
+hz <- paste(round(out_multi$or,3),
+            "(",round(out_multi$or_lci95,3),
+            "-",round(out_multi$or_uci95,3),")",sep = "")
 
+
+tabletext <- cbind(c(NA,"Gut microbiota",out_multi$Gut.microbiota),
+                   c(NA,"Methods",out_multi$method),
+                   c(NA,"No. of SNPs",out_multi$nsnp),
+                   c(NA,"P value",ifelse(out_multi$pval<0.001,"P < 0.001",round(out_multi$pval,3))),
+                   c(NA,"OR(95% CI)",hz))
+
+
+pforest <- forestplot(labeltext=tabletext, 
+                      graph.pos=4,  
+                      col=fpColors(box="#00468B", lines="black", zero = "red"),
+                      mean=c(NA,NA,out_multi$or),
+                      lower=c(NA,NA,out_multi$or_lci95),
+                      upper=c(NA,NA,out_multi$or_uci95), 
+                      #xlab="OR of immune cell population",
+                      boxsize=0.3,lwd.ci=1.5,   
+                      ci.vertices.height = 0.08,ci.vertices=TRUE,
+                      zero=1,lwd.zero=1,      
+                      colgap=unit(14,"mm"),   
+                      xticks = c(0.98,0.99,1,1.01,1.02), 
+                      lwd.xaxis=2,           
+                      lineheight = unit(1,"cm"), 
+                      graphwidth = unit(0.2,"npc"), 
+                      #cex=0.9, fn.ci_norm = fpDrawCircleCI, 
+                      hrzl_lines=list("2" = gpar(lwd=2, col="black"),
+                                      "3" = gpar(lwd=2, col="black")),
+                      #mar=unit(rep(0.1, times = 4), "mm"),
+                      clip=c(0,3),
+                      txt_gp=fpTxtGp(label=gpar(cex=1.25),
+                                     ticks=gpar(cex=1.1),
+                                     xlab=gpar(cex = 1.4),
+                                     title=gpar(cex = 1.2))
+)
+pdf("./figure2_Forest.pdf", width=15, height=12)
+pforest
+dev.off()
