@@ -1,0 +1,31 @@
+Gut.microbiota	nsnp	method	pval	or	or_lci95	or_uci95
+class.Actinobacteria	15	IVW	0.003	0.998	0.997	0.999
+class.Actinobacteria	15	WM	0.012	0.998	0.996	1
+class.Actinobacteria	15	MR Egger	0.131	0.997	0.994	1.001
+class.Betaproteobacteria	12	IVW	0.018	1	1	1.003
+class.Betaproteobacteria	12	WM	0.076	1.002	1	1.004
+class.Betaproteobacteria	12	MR Egger	0.85	1	0.996	1.005
+genus.Eubacterium_ventriosum_group	12	IVW	0.029	1.001	1	1.003
+genus.Eubacterium_ventriosum_group	12	WM	0.083	1.002	1	1.003
+genus.Eubacterium_ventriosum_group	12	MR Egger	0.372	1.003	0.997	1.008
+genus.Coprococcus2	8	IVW	0.115	0.999	0.997	1
+genus.Coprococcus2	8	WM	0.022	0.998	0.996	1
+genus.Coprococcus2	8	MR Egger	0.608	1.004	0.991	1.017
+genus.Coprococcus3	7	IVW	0.044	0.998	0.997	1
+genus.Coprococcus3	7	WM	0.246	0.999	0.996	1.001
+genus.Coprococcus3	7	MR Egger	0.168	0.995	0.989	1.001
+genus.Desulfovibrio	10	IVW	0.059	1.001	1	1.002
+genus.Desulfovibrio	10	WM	0.049	1.002	1	1.003
+genus.Desulfovibrio	10	MR Egger	0.169	1.003	0.999	1.006
+genus.Howardella	9	IVW	0.141	1.001	1	1.001
+genus.Howardella	9	WM	0.037	1.001	1	1.002
+genus.Howardella	9	MR Egger	0.164	1.003	0.999	1.006
+genus.Subdoligranulum	9	IVW	0.01	1.002	1.001	1.004
+genus.Subdoligranulum	9	WM	0.039	1.002	1	1.005
+genus.Subdoligranulum	9	MR Egger	0.262	1.003	0.998	1.009
+genus.Veillonella	7	IVW	0.033	1.001	1	1.003
+genus.Veillonella	7	WM	0.037	1.002	1	1.004
+genus.Veillonella	7	MR Egger	0.45	1.003	0.996	1.009
+genus.Victivallis	6	IVW	0.027	1.001	1	1.003
+genus.Victivallis	6	WM	0.111	1.001	1	1.002
+genus.Victivallis	6	MR Egger	0.523	1.004	0.992	1.017
